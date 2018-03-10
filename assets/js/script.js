@@ -252,9 +252,11 @@ function toggleGif(){
       if (state === "static") {
         $(this).attr("src", animatedURL);
         $(this).attr("state", "animated");
+        $(this).addClass("imgActive");  
       } else {
         $(this).attr("src", staticURL);
         $(this).attr("state", "static");
+        $(this).removeClass("imgActive"); 
       }
     
     });

@@ -43,7 +43,6 @@ body {
 
 #gif-container {
     margin-bottom: 60px;
- 
 }
 
 .gbtn {
@@ -92,3 +91,6 @@ body {
     border-bottom-right-radius: 45px;
 }
 
+.imgActive {
+    border: solid 15px green;
+}
