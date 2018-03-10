@@ -1,7 +1,7 @@
 //Homework 6 - GIPHY API
 //vars
 
-var queryURLpart1 = 'http://api.giphy.com/v1/gifs/search?q=';
+var queryURLpart1 = 'https://api.giphy.com/v1/gifs/search?q=';
 var queryURLpart2 = '&api_key=dc6zaTOxFJmzC&limit=12';
 var queryURL = '';
 
