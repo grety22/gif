@@ -37,16 +37,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home
-                <span class="sr-only">(current)</span>
-              </a>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
             </li>
           </ul>
         </div>
@@ -58,38 +53,26 @@
       <!-- buttons Part -->
       <div class="jumbotron jumbotron-fluid text-center">
 
-        <div class="input-group">
-          <input type="text" class="form-control" aria-label="Text input with dropdown button">
+        <div class="ginput input-group container">
+          <input type="text" class="gbtn3 form-control" id="movie-input" >
+          
           <div class="input-group-append">
-            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Pixar</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-              <div role="separator" class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Separated link</a>
+<!--            <button class="gbtn2 btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select Anime Company</button>-->
+<!--
+            <div id="company-input" class="dropdown-menu">
+               <a class="dropdown-item" href="#">Pixar</a>
+               <a class="dropdown-item" href="#">Disney</a>
+               <a class="dropdown-item" href="#">Dreamworks</a>
             </div>
-            
-            
-        </div>
-            <form id="movie-form">
-      <label for="movie-input"></label>
-      <input type="text" id="movie-input"><br>
-      <input type="text" id="company-input"><br>
-
-      <!-- Button triggers new movie to be added -->
-      <input id="add-movie" type="submit" value="ADD MOVIE">
-    </form>
-            
-            
-            
+-->
+            <button id="add-movie" class="gbtn btn btn-outline-secondary" type="submit">ADD</button>
           </div>
             
-        <div id="btn-container" class="container text-center">
-            
-            <h1 class="display-3 animated bounceInUp">Pixar Movies</h1>
-                 
-        </div>
+       </div>
+         <h1 class="display-3 animated bounceInUp">Animated Movies</h1>    
+         <div id="btn-container" class="container text-center">
+         <!-- buttons here-->
+         </div>
           
       </div>          
       <!-- gift Part -->  
@@ -99,21 +82,21 @@
     </div>
 
     <!-- Footer -->
-    <footer class="footer py-5 turquoiseLightBg borderRounded">
+    <footer class="py-5 turquoiseLightBg borderRounded">
       <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; dotGif 2018</p>
       </div>
     </footer>
     
   
-<!--     Optional JavaScript -->
+    <!-- Optional JavaScript -->
     <script src="assets/js/script.js"></script>
     <!-- Optional JavaScript -->
+    
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
    
-   <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
     
   </body>
 </html>

@@ -3,11 +3,12 @@
 
 var queryURLpart1 = 'http://api.giphy.com/v1/gifs/search?q=';
 var queryURLpart2 = '&api_key=dc6zaTOxFJmzC&limit=12';
+var queryURL = '';
 
 //TO BUILD THE IMAGE URL
 var imgURLpart1 = 'https://media.giphy.com/media/';
 var imgGivenCode = ''; // example : B1CrvUCoMxhy8
-var imgURLpart2 = '/giphy.';
+var imgURLpart2 = '/200_s.';
 var imgExtensionGif = 'gif';
 var imgExtensionJpg = 'jpg';
 
@@ -149,53 +150,59 @@ var chosenMovie = {
 }
 
 $(document).ready(function(){
-aa();
-     addMovies();
- function aa(){
-    showButtons(); 
     
-    $('.flip').on('click',function(){  
-
-        $('#gif-container').empty();
-        var passToAjax = $(this).attr("company") +'+'+ $(this).attr("movie");
-        var queryURL = queryURLpart1+passToAjax+queryURLpart2;
-
-        $.ajax({
+    start();
+    addMovies();
+    
+ function start(){
+   
+     $("#btn-container" ).on( "click", "button", function() {
+       console.log( $( this ).text() );
+       $('#gif-container').empty();
+       var passToAjax = $(this).attr("company") +'+'+ $(this).attr("movie");
+       queryURL = queryURLpart1+passToAjax+queryURLpart2;
+       ajaxCall();
+     });
+   
+     showButtons(); 
+ }  
+    
+function ajaxCall(){
+    $.ajax({
               url: queryURL,
               method: 'GET'
               }).then(function(response){
                   console.log(response);
                   var usefulData = response.data; 
-
                   for (var i = 0; i<usefulData.length; i++){
                       createGifContainer(usefulData[i]);
                   }
                   
               });
-       
-        
-    });
-     
- }   
-    
-    
+}
 
 function createGifContainer(array){
     var gifContainer = $('#gif-container');
     var div = $('<div class="divColor col-lg-3 col-md-4 col-xs-6">');
     var a = $('<a href="#" target="_blank" class="d-block mb-4 h-100">');
-    a.attr('href', array.images.fixed_height.url);
+    
+    imgGivenCode = array.id;
+    
+    var all = imgURLpart1+imgGivenCode+imgURLpart2+imgExtensionGif;
+    
+    a.attr('href', all);
     var img = $('<img class="img-fluid img img-thumbnail" src="" alt="">');
-    img.attr("src", array.images.fixed_height.url);
+    img.attr("src", all);
+//    alert(all);
     var p = $("<p>").text("Rating: " + array.rating);
     a.append(img);
     a.prepend(p);
     div.append(a);
     gifContainer.append(div);
-    
 }    
     
 function showButtons(){
+    $('#btn-container').empty();
     for (var i = 0; i<pixarDreamWorksDisney.length; i++){
         createButtons(i);
         colorIndex++;
@@ -223,17 +230,25 @@ function createButtons(index){
 function addMovies(){
     $("#add-movie").on("click", function(event) {
             event.preventDefault();
-            // This line grabs the input from the textbox
             var movie = $("#movie-input").val().trim();
-            var company = $("#company-input").val().trim();
-            // The movie from the textbox is then added to our array
+//            var company = $("#company-input").val().trim();
+            var company = "";
             chosenMovie.animCompany = company;
             chosenMovie.movieName = movie;
             pixarDreamWorksDisney.push(chosenMovie); 
-            
-            $('#btn-container').empty();
-            aa();
-    });   
+            start();
+            chosenMovie = {};
+            console.dir(pixarDreamWorksDisney);
+    }); 
+    
 }
 
+function toggleGifStatus(){
+    
+}
+    
+    
+    
+    
+    
 });

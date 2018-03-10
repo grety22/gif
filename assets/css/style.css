@@ -15,12 +15,13 @@ body {
 }
 
 .footer {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     width: 80%;
     text-align: center;
     margin-right: 10%;
     margin-left: 10%;
+    margin-bottom: 0 !important;
     max-height: 2%;
 }
 
@@ -44,3 +45,40 @@ body {
     margin-bottom: 60px;
  
 }
+
+.gbtn {
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border: solid 5px #16a085;
+    background-color: #16a085 !important;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 30px;
+}
+
+.gbtn:hover {
+    color: #16a085 !important;
+    background-color: white !important;
+}
+
+.gbtn2 {
+   border-top-right-radius: 0 !important;
+   border-bottom-right-radius: 0 !important; 
+   border-top: solid 5px #16a085;
+   border-bottom: solid 5px #16a085;
+   border-right: 0 !important;     
+   border-left: 0 !important;     
+}
+
+.gbtn3 {
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px; 
+    border: solid 5px #16a085;
+}
+
+.ginput {
+    width: 50% !important;
+    height: 60px !important;
+}
+
