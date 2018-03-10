@@ -28,6 +28,7 @@ body {
 .img {
     width: 400px !important;
     height: 250px !important;
+    cursor: pointer;
 }
 
 .divColor {
@@ -35,10 +36,9 @@ body {
     margin-bottom: 40px;
 }
 
-.divColor a {
+.divColor p {
     color: bisque !important;
     text-transform: uppercase;
-    
 }
 
 #gif-container {

@@ -8,9 +8,8 @@ var queryURL = '';
 //TO BUILD THE IMAGE URL
 var imgURLpart1 = 'https://media.giphy.com/media/';
 var imgGivenCode = ''; // example : B1CrvUCoMxhy8
-var imgURLpart2 = '/200_s.';
-var imgExtensionGif = 'gif';
-var imgExtensionJpg = 'jpg';
+var imgURLpart2Static = '/200_s.gif';
+var imgURLpart2Animated = '/200.gif';
 
 //TO SELECT FROM WHICH COMPANY DO WE WANT TO SEE MOVIE's Gif
 var animationCompany = ['pixar','dreamworks','disney'];
@@ -163,7 +162,6 @@ $(document).ready(function(){
        queryURL = queryURLpart1+passToAjax+queryURLpart2;
        ajaxCall();
      });
-   
      showButtons(); 
  }  
     
@@ -177,27 +175,28 @@ function ajaxCall(){
                   for (var i = 0; i<usefulData.length; i++){
                       createGifContainer(usefulData[i]);
                   }
-                  
+              toggleGif();    
               });
 }
 
 function createGifContainer(array){
     var gifContainer = $('#gif-container');
     var div = $('<div class="divColor col-lg-3 col-md-4 col-xs-6">');
-    var a = $('<a href="#" target="_blank" class="d-block mb-4 h-100">');
+//    var a = $('<a target="_blank" class="d-block mb-4 h-100">');
     
     imgGivenCode = array.id;
     
-    var all = imgURLpart1+imgGivenCode+imgURLpart2+imgExtensionGif;
+    var static = imgURLpart1+imgGivenCode+imgURLpart2Static;
     
-    a.attr('href', all);
-    var img = $('<img class="img-fluid img img-thumbnail" src="" alt="">');
-    img.attr("src", all);
+//    a.attr('href', static);
+    var img = $('<img class="img-fluid img img-thumbnail" state="static" src="" alt="" code="">');
+    img.attr("src", static);
+    img.attr("code", imgGivenCode);
 //    alert(all);
     var p = $("<p>").text("Rating: " + array.rating);
-    a.append(img);
-    a.prepend(p);
-    div.append(a);
+    div.append(img);
+    div.prepend(p);
+//    div.append(a);
     gifContainer.append(div);
 }    
     
@@ -243,12 +242,23 @@ function addMovies(){
     
 }
 
-function toggleGifStatus(){
+function toggleGif(){
+    $("img").on("click", function() {
+      var state = $(this).attr("state");
+      var code = $(this).attr("code");
     
+      var staticURL = imgURLpart1+code+imgURLpart2Static;
+      var animatedURL = imgURLpart1+code+imgURLpart2Animated;
+      
+      if (state === "static") {
+        $(this).attr("src", animatedURL);
+        $(this).attr("state", "animated");
+      } else {
+        $(this).attr("src", staticURL);
+        $(this).attr("state", "static");
+      }
+    
+    });
 }
-    
-    
-    
-    
     
 });
