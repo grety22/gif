@@ -259,5 +259,12 @@ function toggleGif(){
     
     });
 }
+
     
 });
+
+
+$('#contactClick').click(function(){
+    $('#mymodal').modal('show');
+});
+
