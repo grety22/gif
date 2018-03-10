@@ -8,6 +8,9 @@
     <meta name="author" content="Gretel Martinez">
 
     <title>AJAX | GIPHY</title>
+    
+    <!-- favicon-->
+    <link rel="icon" href="assets/img/uglyfavicon.jpg">
 
     <!-- Bootstrap core CSS -->
     <link href="assets/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -40,9 +43,6 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Contact</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
           </ul>
         </div>
       </div>
@@ -51,7 +51,7 @@
     <!-- Page Content -->
     <div class="container">
       <!-- buttons Part -->
-      <div class="jumbotron jumbotron-fluid text-center">
+      <div class="jumbotron jumbotron-fluid text-center jumbo">
 
         <div class="ginput input-group container">
           <input type="text" class="gbtn3 form-control" id="movie-input" >
@@ -69,15 +69,19 @@
           </div>
             
        </div>
-         <h1 class="display-3 animated bounceInUp">Animated Movies</h1>    
+         <h1 class="display-3 animated bounceInUp">Animated Movies</h1>
+         <br>
          <div id="btn-container" class="container text-center">
          <!-- buttons here-->
          </div>
-          
+         <!-- msg Part --> 
+             <br>
+             <h4 class="display-3 msgs animated bounceInUp">Hey buddy, just click a button to see gif, then click over the gif to start or stop animation </h4>
       </div>          
       <!-- gift Part -->  
       <div id="gif-container" class="row text-center text-lg-center">
       </div>
+      
       
     </div>
 

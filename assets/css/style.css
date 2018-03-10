@@ -82,3 +82,13 @@ body {
     height: 60px !important;
 }
 
+.msgs {
+    font-size: 1.5em !important;
+    color : #2c3e50 !important;
+}
+
+.jumbo {
+    border-bottom-left-radius: 45px;
+    border-bottom-right-radius: 45px;
+}
+

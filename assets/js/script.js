@@ -237,7 +237,6 @@ function addMovies(){
             pixarDreamWorksDisney.push(chosenMovie); 
             start();
             chosenMovie = {};
-            console.dir(pixarDreamWorksDisney);
     }); 
     
 }
